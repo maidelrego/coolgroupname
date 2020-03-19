@@ -2,54 +2,40 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
- 
-  <link type="stylesheet" href="https://unpkg.com/neomorphism">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>User Sign Up</title>
 
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://unpkg.com/neomorphism" />
+    <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-
-  <header class="navbar">
-    <a href="https://ismail9k.com" class="navbar-brand">
-      Ismail9k_
-    </a>
-    <div class="navbar-start">
-      <a class="navbar-item">Home</a>
-      <a class="navbar-item">About</a>
-      <a class="navbar-item">Company</a>
+    <div class="formContainer">
+        <h2 class="formTitle">Login</h2>
+        <form autocomplete="off" class="form">
+            <div class="field">
+                <label for="firstName" class="field-label">Username</label>
+                <input id="firstName" type="text" placeholder="Enter username" class="input">
+            </div>
+            <div class="field">
+                <label for="lastName" class="field-label">Password</label>
+                <input id="lastName" type="text" placeholder="********" class="input">
+            </div>
+            <div class="field">
+                <label for="exampleEmail1" class="field-label">Username</label>
+                <input id="exampleEmail1" type="text" placeholder="Enter username" class="input">
+            </div>
+            <div class="field">
+                <label for="examplePassword1" class="field-label">Password</label>
+                <input id="examplePassword1" type="text" placeholder="Enter password" class="input">
+            </div>
+            <div class="field">
+                <button class="button">login</button>
+            </div>
+        </form>
     </div>
-    <div class="navbar-end">
-      <a class="navbar-item">
-        <svg viewbox="0 0 24 24" class="icon">
-          <path d="M..."></path>
-        </svg>
-      </a>
-      <a class="navbar-item">
-        <svg viewbox="0 0 24 24" class="icon">
-          <path d="M..."></path>
-        </svg>
-      </a>
-    </div>
-  </header>
-  
-  <button class="button">
-    <svg viewBox="0 0 24 24" class="icon">
-      <path d="M..."></path>
-    </svg>
-    <span>Star</span>
-  </button>
-  <button class="button">
-    <span>Like</span>
-    <svg viewBox="0 0 24 24" class="icon">
-      <path d="M..."></path>
-    </svg>
-  </button>
-
-
 </body>
 
 </html>
