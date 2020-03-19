@@ -1,0 +1,74 @@
+/* STYLE GUIDE! 
+red: 
+	#A70000
+	rgba(167, 0, 0, 1)
+
+white:
+	#ffffff
+	rgba(255, 255, 255, 1)
+
+fonts: 
+	Helvetica 
+
+titles: 
+	font family: Helvetica 
+	font-variant-caps: all-petite-caps;
+	letter-spacing: 4px; */
+
+/* ------------------------------------------------------ */
+
+/* Login & sign up forms style */
+form, input, button, textarea {
+    background-color: white !important;
+    border-color: white !important;
+}
+
+form, button {
+    font-variant-caps: all-petite-caps;
+}
+
+.formContainer {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5em;
+}
+
+.formTitle {
+    text-align: center;
+    letter-spacing: 4px;
+    font-variant-caps: all-petite-caps;
+}
+
+.input:focus {
+    border-color: #A70000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(167, 0, 0, 1);
+    border-color: white !important;
+    box-shadow: white !important;
+}
+
+.button:active, .button:focus {
+   border-color: #A70000;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(167, 0, 0, 1);
+   color: #A70000;
+}
+
+.button:hover {
+   color: #A70000;
+}
+
+
+
+/* main page styles */
+
+
+
+/* user dashboard styles */
+
+
+
+/* symptom results styles */
+
+
+
+/* FAQ styles */
