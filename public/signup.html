@@ -14,28 +14,31 @@
 <body>
     <div class="formContainer">
         <h2 class="formTitle">Sign Up</h2>
-        <form autocomplete="off" class="form">
-            <div class="field">
+        <form autocomplete="off" class="signup">
+            <!-- <div class="field">
                 <label for="firstName" class="field-label">First Name</label>
                 <input id="firstName" type="text" placeholder="John" class="input">
             </div>
             <div class="field">
                 <label for="lastName" class="field-label">Last Name</label>
                 <input id="lastName" type="text" placeholder="Doe" class="input">
+            </div> -->
+            <div class="field">
+                <label for="email-input" class="field-label">Email</label>
+                <input id="email-input" type="email" placeholder="john@email.com" class="input">
             </div>
             <div class="field">
-                <label for="exampleEmail1" class="field-label">Username</label>
-                <input id="exampleEmail1" type="text" placeholder="Enter username" class="input">
+                <label for="password-input" class="field-label">Password</label>
+                <input id="password-input" type="password" placeholder="Enter password" class="input">
             </div>
             <div class="field">
-                <label for="examplePassword1" class="field-label">Password</label>
-                <input id="examplePassword1" type="text" placeholder="Enter password" class="input">
-            </div>
-            <div class="field">
-                <button class="button">login</button>
+                <button class="button" type="submit">login</button>
             </div>
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/signup.js"></script>
+    
 </body>
 
 </html>
