@@ -2,44 +2,34 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>User Login</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://unpkg.com/neomorphism" />
+    <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+   
+
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
+    <div class="formContainer">
+        <h2 class="formTitle">Login</h2>
+        <form autocomplete="off" class="form">
+            <div class="field">
+                <label for="exampleEmail1" class="field-label">Username</label>
+                <input id="exampleEmail1" type="text" placeholder="Enter username" class="input">
+            </div>
+            <div class="field">
+                <label for="examplePassword1" class="field-label">Password</label>
+                <input id="examplePassword1" type="text" placeholder="Enter password" class="input">
+            </div>
+            <div class="field">
+                <button class="button">login</button>
+            </div>
         </form>
-        <br />
-        <p>Or sign up <a href="/">here</a></p>
-      </div>
     </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
-
 </body>
 
 </html>
