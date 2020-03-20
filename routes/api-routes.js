@@ -20,9 +20,7 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName
+      password: req.body.password
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -52,5 +50,4 @@ module.exports = function(app) {
       });
     }
   });
-
 };
