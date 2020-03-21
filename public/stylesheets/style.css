@@ -18,7 +18,19 @@ titles:
 /* ------------------------------------------------------ */
 
 /* Login & sign up forms style */
-form, input, button, textarea {
+.btn {
+    margin-top: 50px;
+}
+
+.buttons {
+    margin-top: 5px;
+}
+
+.card {
+    width: 100px;
+}
+
+form, input, button, textarea, .navbar, header {
     background-color: white !important;
     border-color: white !important;
 }
@@ -62,6 +74,10 @@ form, button {
 
 .button:hover {
    color: #A70000;
+}
+
+.brand {
+    color: #A70000;
 }
 
 
