@@ -16,20 +16,23 @@
 <body>
     <div class="formContainer">
         <h2 class="formTitle">Login</h2>
-        <form autocomplete="off" class="form">
+        <form autocomplete="off" class="login">
             <div class="field">
-                <label for="exampleEmail1" class="field-label">Username</label>
-                <input id="exampleEmail1" type="text" placeholder="Enter username" class="input">
+                <label for="email-input" class="field-label">Username</label>
+                <input id="email-input" type="email" placeholder="Enter email" class="input">
             </div>
             <div class="field">
-                <label for="examplePassword1" class="field-label">Password</label>
-                <input id="examplePassword1" type="text" placeholder="Enter password" class="input">
+                <label for="password-input" class="field-label">Password</label>
+                <input id="password-input" type="password" placeholder="Enter password" class="input">
             </div>
             <div class="field">
-                <button class="button">login</button>
+                <button type="submit" class="button">login</button>
             </div>
         </form>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
 </body>
 
 </html>
