@@ -18,7 +18,19 @@ titles:
 /* ------------------------------------------------------ */
 
 /* Login & sign up forms style */
-form, input, button, textarea {
+.btn {
+    margin-top: 50px;
+}
+
+.buttons {
+    margin-top: 5px;
+}
+
+.card {
+    width: 100px;
+}
+
+form, input, button, textarea, .navbar, header {
     background-color: white !important;
     border-color: white !important;
 }
@@ -67,6 +79,7 @@ form, button {
 .checkbox-input {
     background-color: #A70000 !important;
 }
+
 
 .checkbox-input:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(167, 0, 0, 1);
