@@ -18,9 +18,7 @@ titles:
 /* ------------------------------------------------------ */
 
 /* Login & sign up forms style */
-.btn {
-    margin-top: 50px;
-}
+
 
 .buttons {
     margin-top: 5px;
@@ -30,7 +28,7 @@ titles:
     width: 100px;
 }
 
-form, input, button, textarea, .navbar, header {
+form, input, button, textarea {
     background-color: white !important;
     border-color: white !important;
 }
