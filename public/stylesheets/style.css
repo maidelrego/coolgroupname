@@ -75,8 +75,13 @@ form, button {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .brand {
     color: #A70000;
+=======
+.checkbox-input {
+    background-color: #A70000 !important;
+>>>>>>> 313fb6c00b1fbaef5b78a547dd42a37542acc185
 }
 
 =======
