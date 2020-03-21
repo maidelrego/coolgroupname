@@ -6,6 +6,22 @@ module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+
+  app.post('/api/symptoms', function (req, res) {
+    db.User.create({
+      fever: req.body.fever,
+      cough: req.body.cough,
+      breath: req.body.breath,
+      blueFace: req.body.blueFace
+    })
+      .then(function () {
+        res.redirect(307, '/api/members')
+      })
+      .catch(function (err) {
+        res.status(401).json(err)
+      })
+  })
+
   app.post('/api/login', passport.authenticate('local'), function (req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
