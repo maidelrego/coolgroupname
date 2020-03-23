@@ -27,7 +27,7 @@ titles:
     width: 100px;
 }
 
-form, input, button, textarea, .navbar, header {
+form, input, button, textarea {
     background-color: white !important;
     border-color: white !important;
 }
@@ -36,11 +36,17 @@ form, button {
     font-variant-caps: all-petite-caps;
 }
 
+
 .formContainer {
     width: 400px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 5em;
+    box-shadow: 6px 6px 12px rgba(56,53,85,0.3), -6px -6px 12px rgba(255,255,255,0.5), inset 1px 1px 1px rgba(224,234,249,0.5);
+    padding: 2.4em;
+    border-radius: 16px;
+    margin-bottom: 1em;
+    margin-top: 5em;
 }
 
 .formTitle {
@@ -81,15 +87,162 @@ form, button {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(167, 0, 0, 1);
 }
 
+
+
+
+
 /* main page styles */
+.mainBody {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+.main-nav {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+.main-nav .navbar {
+    padding: 0;
+}
+
+.main-nav .navbar-brand {
+  padding: 0rem !important;
+  font-family: "oswald";
+}
+
+.main-nav .navbar-toggler {
+    position: relative;
+    z-index: 1;
+}
+
+.main-nav .main-menu-item {
+    text-align: center;
+    justify-content: center;
+}
+
+.main-nav .main-menu-item {
+    text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-family: ;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black;
+}
+
+.main-content {
+    height: 935px;
+    position: relative;
+    overflow: hidden;
+    background-image: url(./images/main.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.main-content .main-text {
+    display: table;
+    width: 100%;
+    height: 935px;
+}
+
+.main-content .main-text .main-sm-text {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 155px;
+}
+
+.main-content .main-text h5 {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #242429;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.2em;
+}
+
+.main-content .main-text h1 {
+    font-size: 55px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    color: #242429;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 3px;
+}
+
+.main-content .main-text p {
+    font-size: 15px;
+    line-height: 25px;
+    font-family: "Roboto", sans-serif;
+    color: #242429;
+    padding-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+
+.lg-img {
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        z-index: 9999 !important;
+        position: absolute;
+        left: 0;
+        top: 62px;
+        width: 100%;
+        background-color: #fff;
+        text-align: center !important;
+        box-shadow: 0px 11px 9px -5px rgba(0, 0, 0, 0.2);
+    }
+}  
+
+@media only screen and (max-width: 1200px) and (min-width: 992px){
+    .main-content .main-text h1 {
+        font-size: 55px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+}
+
+@media only screen and (max-width: 3640px) and (min-width: 1200px){
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-content .main-text .main-sm-text {
+        vertical-align: middle;
+        padding-top: 0;
+        text-align: center;
+    }
+}
+
+
 
 
 
 /* user dashboard styles */
 
-
-
-/* symptom results styles */
 
 
 
