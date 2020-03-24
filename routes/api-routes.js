@@ -8,18 +8,35 @@ module.exports = function (app) {
   // Otherwise the user will be sent an error
 
   app.post('/api/symptoms', function (req, res) {
-    db.User.create({
+    console.log(req.body.fever)
+    db.Symptoms.create({
       fever: req.body.fever,
       cough: req.body.cough,
       breath: req.body.breath,
       blueFace: req.body.blueFace
     })
       .then(function () {
-        res.redirect(307, '/api/members')
+        res.redirect('/api/members')
       })
       .catch(function (err) {
         res.status(401).json(err)
       })
+  })
+
+  app.get('/api/members', function (req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({})
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        id: req.user.id
+      })
+    }
   })
 
   app.post('/api/login', passport.authenticate('local'), function (req, res) {
@@ -67,6 +84,12 @@ module.exports = function (app) {
         firstName: req.user.firstName,
         lastName: req.user.lastName,
         id: req.user.id
+      })
+      res.json({
+        fever: req.body.fever,
+        cough: req.body.cough,
+        breath: req.body.breath,
+        blueFace: req.body.blueFace
       })
     }
   })
