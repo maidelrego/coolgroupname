@@ -1,11 +1,11 @@
 {
     "development": {
-        "username": "root",
-        "password": "oddun077",
-        "database": "covid_19",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "dialect": "mysql"
+     "username": "root",
+      "password": "Jayhawks1!",
+      "database": "covid_19",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
     },
     "test": {
         "username": "root",
