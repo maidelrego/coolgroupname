@@ -8,39 +8,38 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
 
-  app.post('/api/symptoms', isAuthenticated(), function (req, res) {
+  app.post('/api/symptoms', isAuthenticated, function (req, res) {
     console.log(req.body.fever)
-    db.User.update({
+    var data = {
       fever: req.body.fever,
       cough: req.body.cough,
       breath: req.body.breath,
-      blueFace: req.body.blueFace,
+      blueFace: req.body.blueFace
+    }
+    var where = {
+
       where: {
-        id: req.body.id
+        id: req.user.id
       }
-    })
+    }
+    db.User.update(data, where)
       .then(function () {
         res.redirect('/api/members')
       })
       .catch(function (err) {
+        console.error(JSON.stringify(err), data, where)
+        console.trace()
         res.status(401).json(err)
       })
   })
 
-  app.get('/api/members', function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({})
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        firstName: req.user.firstName,
-        lastName: req.user.lastName,
-        id: req.user.id
-      })
-    }
+  app.get('/api/members', isAuthenticated, function (req, res) {
+    res.json({
+      email: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      id: req.user.id
+    })
   })
 
   app.post('/api/login', passport.authenticate('local'), function (req, res) {
@@ -76,20 +75,16 @@ module.exports = function (app) {
   })
 
   // Route for getting some data about our user to be used client side
-  app.get('/api/user_data', function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({})
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        firstName: req.user.firstName,
-        lastName: req.user.lastName,
-        fever: req.user.fever,
-        id: req.user.id
-      })
-    }
+  app.get('/api/user_data', isAuthenticated, function (req, res) {
+    res.json({
+      email: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      fever: req.body.fever,
+      cough: req.body.cough,
+      breath: req.body.breath,
+      blueFace: req.body.blueFace,
+      id: req.user.id
+    })
   })
 }

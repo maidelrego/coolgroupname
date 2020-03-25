@@ -9,36 +9,59 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="https://unpkg.com/neomorphism">
     <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- or use local jquery -->
+    <script src="./js/Validation/jqBootstrapValidation.js"></script>
 </head>
 
 <body>
     <div class="formContainer">
         <h2 class="formTitle">Sign Up</h2>
         <form autocomplete="off" class="signup">
-            <div class="field">
-                <label for="firstName" class="field-label">First Name</label>
-                <input id="firstName" type="text" placeholder="John" class="input">
+            <div class="field control-group">
+                <label for="firstName" class="field-label control-label">First Name</label>
+                <div class="controls">
+                    <input id="firstName" type="text" placeholder="John" class="input" required>
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="field control-group">
+                <label for="lastName" class="field-label control-label">Last Name</label>
+                <div class="controls">
+                    <input id="lastName" type="text" placeholder="Doe" class="input" required>
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="field control-group">
+                <label for="email-input" class="field-label control-label">Email</label>
+                <div class="controls">
+                    <input id="email-input" type="email" placeholder="john@email.com" class="input" required>
+                    <p class="help-block"></p>
+                </div>
+            </div>
+            <div class="field control-group">
+                <label for="password-input" class="field-label control-label">Password</label>
+                <div class="controls">
+                    <input id="password-input" type="password" placeholder="Enter password" class="input" minlength="6"
+                        required>
+                    <p class="help-block"></p>
+                </div>
             </div>
             <div class="field">
-                <label for="lastName" class="field-label">Last Name</label>
-                <input id="lastName" type="text" placeholder="Doe" class="input">
-            </div>
-            <div class="field">
-                <label for="email-input" class="field-label">Email</label>
-                <input id="email-input" type="email" placeholder="john@email.com" class="input">
-            </div>
-            <div class="field">
-                <label for="password-input" class="field-label">Password</label>
-                <input id="password-input" type="password" placeholder="Enter password" class="input">
-            </div>
-            <div class="field">
-                <button class="button" type="submit">login</button>
+                <button class="button" type="submit">Sign Up</button>
             </div>
         </form>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/signup.js"></script>
-    
+
+
+
+<script type="text/javascript" src="./js/signup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="./js/Validation/jqBootstrapValidation.js"></script>
+
+<script>
+    $(function () { $("input,select,textarea").jqBootstrapValidation(); });
+</script>
 </body>
 
 </html>
