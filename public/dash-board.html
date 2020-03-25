@@ -9,7 +9,21 @@
     <!-- bootstrap core css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+
+<style>
+
+.contactInfo {
+    font-weight: bold;
+}
+
+h4 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+</style>
+
+    </head>
 
 <body></body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 navbar-expand-md">
@@ -22,7 +36,7 @@
             <span data-feather="menu" class="my-1"></span>
         </a>
     </div>
-    <div class="navbar-collapse collapse" id="topnav">
+    <div class="navbar-collapse collapse justify-content-end" id="topnav">
         <ul class="navbar-nav px-3 py-2">
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="/login.html">Log out</a>
@@ -36,16 +50,16 @@
             <div class="sidebar-sticky flex-column w-100 mt-1">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <p class="nav-link">
+                        <p class="nav-link contactInfo">
                             First Name: <span class="member-name"></span>
                         </p>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item contactInfo">
                         <p class="nav-link">
                             Last Name: <span class="member-lastname"></span>
                         </p>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item contactInfo">
                         <p class="nav-link">
                             Email: <span class="member-email"></span>
                         </p>
@@ -63,22 +77,30 @@
 
 
             <div class="row">
-                <div class="col-xl-12 col-md-12 mb-12">
+                <div class="col-xl-6 col-md-6 mb-6">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Symptom Survey
-                                        Results</div>
+                                    <h4>Symptom Tracker</h4>
                                     <div class="h6 mb-0 font-weight-bold text-gray-800">03/16/2020 10:30 PM</div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">results: negative</div>
-                                    <button type="submit" class="btn redbtn btn-outline-danger"><a href="/form">Take Survey</a></button>
+                                    <div class="h6 mb-0 font-weight-bold text-gray-800">Symptoms: cough, fever</div>
+                                    <button type="submit" class="btn redbtn btn-outline-danger"><a href="/form">Submit Symptoms</a></button>
                                     </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-6 col-md-6 mb-6">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <h4>Find the nearest hospital</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </main>
     </div>
 </div>
