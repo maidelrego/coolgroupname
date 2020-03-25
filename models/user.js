@@ -25,6 +25,20 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true
       }
     },
+
+    fever: {
+      type: DataTypes.STRING
+    },
+    cough: {
+      type: DataTypes.STRING
+    },
+    breath: {
+      type: DataTypes.STRING
+    },
+    blueFace: {
+      type: DataTypes.STRING
+    },
+
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
