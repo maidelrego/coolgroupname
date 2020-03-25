@@ -1,19 +1,23 @@
 // Requiring our models and passport as we've configured it
 var db = require('../models')
 var passport = require('../config/passport')
+var isAuthenticated = require('../config/middleware/isAuthenticated')
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
 
-  app.post('/api/symptoms', function (req, res) {
+  app.post('/api/symptoms', isAuthenticated(), function (req, res) {
     console.log(req.body.fever)
-    db.Symptoms.create({
+    db.User.update({
       fever: req.body.fever,
       cough: req.body.cough,
       breath: req.body.breath,
-      blueFace: req.body.blueFace
+      blueFace: req.body.blueFace,
+      where: {
+        id: req.body.id
+      }
     })
       .then(function () {
         res.redirect('/api/members')
@@ -83,13 +87,8 @@ module.exports = function (app) {
         email: req.user.email,
         firstName: req.user.firstName,
         lastName: req.user.lastName,
+        fever: req.user.fever,
         id: req.user.id
-      })
-      res.json({
-        fever: req.body.fever,
-        cough: req.body.cough,
-        breath: req.body.breath,
-        blueFace: req.body.blueFace
       })
     }
   })
