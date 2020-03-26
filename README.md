@@ -40,6 +40,9 @@ Our site was created for a person who might have symptoms of Coronavirus. By usi
 * Demo: Show our site!
 
 * Directions for Future Development
+    * keep history of all symptoms 
+    * have hospitals create a waitlist with database info
+    * create graphs to see if all users symptoms are increasing or decreasing
 
 * Links to the deployed application and the GitHub repository
 
