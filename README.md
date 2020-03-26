@@ -6,38 +6,43 @@ Our site was created for a person who might have symptoms of Coronavirus. By usi
 
 * Must use a Node and Express server
 
-* Must be backed by a MySQL database and an ORM (not necessarily Sequelize)
+* Must be backed by a MySQL database and an ORM 
+    * Sequelize
 
 * Must utilize both GET and POST routes for retrieving and adding new data
 
-* Must be deployed using Heroku (with data)
-
 * Must utilize at least one new third-party API
-    * third-party API: 
+    * password validation:: http://reactiveraven.github.io/jqBootstrapValidation/
+
+    * password strength bar: https://www.jqueryscript.net/form/Slim-Password-Strength-Meter-Plugin-For-jQuery.html
 
 * Must have a polished UI 
 
 * Must meet good quality coding standards (indentation, scoping, naming)
 
-* Must use a CSS framework other than Bootstrap
-    * Framework: 
+* Must use a CSS framework 
+    * Bootstrap: https://getbootstrap.com/
+
+    * Neomorphism UI: https://ismail9k.github.io/neomorphism/
 
 * Must follow MVC paradigm
 
-* Must use Handlebars.js
 
 
 ## Presentation Requirements
 
 * Elevator pitch: a one minute description of your application
 
-* Concept: What is your user story? What was your motivation for development?
+* Concept: As a person who could get Coronavirus, I want to keep track of my symptoms, so I can remember if my symptoms change.
 
 * Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
 
 * Demo: Show our site!
 
 * Directions for Future Development
+    * keep history of all symptoms 
+    * have hospitals create a waitlist with database info
+    * create graphs to see if all users symptoms are increasing or decreasing
 
 * Links to the deployed application and the GitHub repository
 

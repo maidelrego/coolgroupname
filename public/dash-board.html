@@ -5,140 +5,135 @@
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>test</title>
+    <title>User Dashboard</title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-          //covid api
-          var queryURL = "https://api.covid19api.com/summary"
-        
-      
-          $.ajax({
-            url: queryURL,
-            method: "GET"
-          }).then(function(response) {
-            var us = response.Countries[210];
-            
-            $(".cases").html("<h6>" + "Cases:" + us.TotalConfirmed + "</h6>");
-            $(".deaths").html("<h6>" + "Deaths:" + us.TotalDeaths + "</h6>");
-            $(".recoveries").html("<h6>" + "Recoveries:" + us.TotalRecovered + "</h6>");    
-          });
-      // ---------------------------------------------------------
-        </script>
-<style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .contactInfo {
+            font-weight: bold;
+        }
 
-.contactInfo {
-    font-weight: bold;
-}
+        h4 {
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
 
-h4 {
-    text-align: center;
-    text-decoration: underline;
-}
-
-</style>
-
-    </head>
+</head>
 
 <body>
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 navbar-expand-md">
-    <div class="navbar-brand d-flex align-items-center justify-content-between col-sm-12 col-md-2 mr-0">
-        <a class="mr-1 d-md-none text-light" href="#sidenav" data-toggle="collapse" data-target="#sidenav">
-            <span data-feather="menu" class="my-1"></span>
-        </a>
-        <a class="text-light" href="">User Dashboard</a>
-        <a class="navbar-toggler border-0 p-0" href="#topnav" data-toggle="collapse" data-target="#topnav">
-            <span data-feather="menu" class="my-1"></span>
-        </a>
-    </div>
-    <div class="navbar-collapse collapse justify-content-end" id="topnav">
-        <ul class="navbar-nav px-3 py-2">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="/login.html">Log out</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="container-fluid">
-    <div class="row navbar-expand-md">
-        <nav class="col-md-3 col-lg-2 bg-light navbar-collapse collapse sidebar" id="sidenav">
-            <div class="sidebar-sticky flex-column w-100 mt-1">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <p class="nav-link contactInfo">
-                            First Name: <span class="member-name"></span>
-                        </p>
-                    </li>
-                    <li class="nav-item contactInfo">
-                        <p class="nav-link">
-                            Last Name: <span class="member-lastname"></span>
-                        </p>
-                    </li>
-                    <li class="nav-item contactInfo">
-                        <p class="nav-link">
-                            Email: <span class="member-email"></span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
-            </div>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 navbar-expand-md">
+        <div class="navbar-brand d-flex align-items-center justify-content-between col-sm-12 col-md-2 mr-0">
+            <a class="mr-1 d-md-none text-light" href="#sidenav" data-toggle="collapse" data-target="#sidenav">
+                <span data-feather="menu" class="my-1"></span>
+            </a>
+            <a class="text-light" href="">User Dashboard</a>
+            <a class="navbar-toggler border-0 p-0" href="#topnav" data-toggle="collapse" data-target="#topnav">
+                <span data-feather="menu" class="my-1"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse justify-content-end" id="topnav">
+            <ul class="navbar-nav px-3 py-2">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="/login.html">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row navbar-expand-md">
+            <nav class="col-md-3 col-lg-2 bg-light navbar-collapse collapse sidebar" id="sidenav">
+                <div class="sidebar-sticky flex-column w-100 mt-1">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <p class="nav-link contactInfo">
+                                First Name: <span class="member-name"></span>
+                            </p>
+                        </li>
+                        <li class="nav-item contactInfo">
+                            <p class="nav-link">
+                                Last Name: <span class="member-lastname"></span>
+                            </p>
+                        </li>
+                        <li class="nav-item contactInfo">
+                            <p class="nav-link">
+                                Email: <span class="member-email"></span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
 
 
-
-
-            <div class="row">
-                <div class="col-xl-6 col-md-6 mb-6">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <h4>Symptom Tracker</h4>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">03/16/2020 10:30 PM</div>
-                                    <div class="h6 mb-0 font-weight-bold text-gray-800">Symptoms: cough, fever</div>
-
-                                    <br>
-                                    <button type="submit" class="btn redbtn btn-outline-danger"><a href="/form">Submit Symptoms</a></button>
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 mb-6">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <h4>Symptom Tracker</h4>
+                                        <div class="h6 mb-0 font-weight-bold text-gray-800">03/16/2020 10:30 PM</div>
+                                        <div class="h6 mb-0 font-weight-bold text-gray-800">Symptoms: cough, fever</div>
+                                        <button type="submit" class="btn redbtn btn-outline-danger"><a
+                                                href="symptoms.html">Submit Symptoms</a></button>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 mb-6">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <h4>Find the nearest hospital</h4>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-md-6 mb-6">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <h4>Find the nearest hospital</h4>
+                <br>
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 mb-6">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <h4>Covid-19 Live US Counter</h4>
+                                <div class="cases"></div>
+                                <div class="deaths text-danger"></div>
+                                <div class="recoveries text-success"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-            <div class="col-xl-6 col-md-6 mb-6">
-                <div class="card border-left-primary shadow h-100 py-2">
-                    <div class="card-body">
-                        <h4>Covid-19 Live US Counter</h4>
-                        <div class="cases"></div>
-                        <div class="deaths text-danger"></div>
-                        <div class="recoveries text-success"></div>
-                    </div>
-                </div>
-            </div>
+
+
+            </main>
         </div>
-
-
-        </main>
     </div>
-</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/members.js"></script>
+<script type="text/javascript">
+    //covid api
+    var queryURL = "https://api.covid19api.com/summary"
+
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var us = response.Countries[210];
+
+        $(".cases").html("<h6>" + "Cases:" + us.TotalConfirmed + "</h6>");
+        $(".deaths").html("<h6>" + "Deaths:" + us.TotalDeaths + "</h6>");
+        $(".recoveries").html("<h6>" + "Recoveries:" + us.TotalRecovered + "</h6>");
+    });
+
+</script>
 </body>
 
 </html>
