@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospitals api</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script>
+        getLocation()
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(logPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function logPosition(position) {
+            var latitude = position.coords.latitude 
+            var longitude = position.coords.longitude
+            console.log(latitude, longitude)
+            var lat1 = latitude + 1
+            var lat2 = latitude - 1
+            var lon1 = longitude + 1
+            var lon2 = longitude - 1
+            console.log(lat1, lon1, lat2, lon2)
+        }
+       
+        
+    </script>
+
+
+    <script type="text/javascript">
+        //PLACES API locates nearby hospitals
+        var queryURL = "https://api.geoapify.com/v1/places?lat1=39.260450635614475&lon1=-95.19375453409113&lat2=38.519782776227274&lon2=-94.35409646590942&type=hospital&limit=5&apiKey=2e11d39415844f0ca5d8464cf7d6a436"
+        
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                $('.hospital').text(response.features[0].properties.datasources[0].data.name)
+                console.log(response.features[0].properties.datasources[0].data['addr:housenumber'])
+                console.log(response.features[0].properties.datasources[0].data['addr:street'])
+                console.log(response.features[0].properties.datasources[0].data['addr:city'])
+                console.log(response.features[0].properties.datasources[0].data['addr:postcode'])
+                $('.phone').text(response.features[0].properties.datasources[0].data.phone)
+
+
+
+            });
+        // ---------------------------------------------------------
+    </script>
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-xl-6 col-md-6 mb-6">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <h4>Find nearby hospitals</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <!-- The scope attribute specifies that this is a header for a column -->
+                                <th scope="col">Hospital Name</th>
+                                <th scope="col">phone number</th>
+                                <th scope="col">address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="hospital"></td>
+                                <td class="phone"></td>
+                                <td class="adress"></td>
+                            </tr>
+                            <!-- Insert additional movie rows here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
