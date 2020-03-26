@@ -34,4 +34,8 @@ module.exports = function (app) {
   app.get('/members', isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, '../public/dash-board.html'))
   })
+
+  app.get('/form', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/symptoms.html'))
+  })
 }
