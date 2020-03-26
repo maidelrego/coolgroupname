@@ -249,6 +249,29 @@ a {
 
 /* user dashboard styles */
 
+body{
+    background-color: #f3f6f8;
+    margin-top:20px;
+  }
+  .card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+  
+  .text-muted {
+    color: darkgray !important;
+  }
+  
+  .font-13 {
+    font-size: 13px!important;
+  }
+
+  .card-box {
+    border-radius: 10px;
+}
+
 
 
 
