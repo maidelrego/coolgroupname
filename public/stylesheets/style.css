@@ -122,7 +122,7 @@ a {
 
 .main-nav .navbar-brand {
   padding: 0rem !important;
-  font-family: "oswald";
+  font-family: "Oswald", sans-serif;
 }
 
 .main-nav .navbar-toggler {
@@ -253,11 +253,12 @@ body{
     background-color: #f3f6f8;
     margin-top:20px;
   }
+
   .card-box {
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 30px;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   
   .text-muted {
@@ -273,6 +274,22 @@ body{
 }
 
 
+.biggertxt {
+    font-family: "Oswald", sans-serif;
+}
 
 
-/* FAQ styles */
+.helpfulBtn {
+    background-color: #A70000 !important;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.btnText {
+    color: white ;
+}
+
+.btnText:hover {
+    color: gray
+}

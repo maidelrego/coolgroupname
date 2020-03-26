@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="./stylesheets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <style>
-
-
-    </style>
 
 </head>
 
@@ -27,7 +23,7 @@
                     <div class="card-box">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2>User Dashboard</h2>
+                                <h2 class="biggertxt">User Dashboard</h2>
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-right">
@@ -40,10 +36,10 @@
                 </div>
             </div>
             <!-- Personal-Information -->
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-xl-3">
                     <div class="card-box">
-                        <h4 class="header-title">Personal Information</h4>
+                        <h4 class="header-title biggertxt">Personal Information</h4>
                         <div class="panel-body">
                             <div class="text-left">
                                 <p class="text-muted font-13"><strong>First Name:</strong> <span
@@ -57,10 +53,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-box">
-                        <h4 class="header-title ">Helpful Links</h4>
+                    <div class="card-box align-item-center">
+                        <h4 class="header-title biggertxt" style="text-align: center;">Helpful Links</h4>
                         <div class="panel-body">
-
+                            <div class="text-left">
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html"  target="_blank" class="btnText">Centers for Disease Control and Prevention</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.who.int/health-topics/coronavirus#tab=tab_1"  target="_blank" class="btnText">World Health Organization</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf"  target="_blank" class="btnText">America’s Coronavirus Guidelines</a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,34 +68,38 @@
 
                 <div class="col-xl-9">
                     <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
-                        <h3 class="">Live Tracker - USA</h3>
+                        <h3 class="biggertxt">Live Tracker - USA</h3>
                     </div>
                     <!-- Live tracker box -->
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Confirmed Cases</h6>
-                                <h2 class="cases" data-plugin="counterup">19,101</h2><span class="text-muted">New
-                                    Confirmed: 5,424</span>
+                                <h6 class="text-muted text-uppercase mt-0">Total Cases Today:</h6>
+                                <h2 class="cases" data-plugin="counterup"></h2>
+                                <span class="text-muted">New Cases Today:</span>
+                                <span class="text-muted newCases"></span>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Deaths</h6>
-                                <h2 class="deaths text-danger">244</h2><span class="text-muted">New Deaths: 44</span>
+                                <h6 class="text-muted text-uppercase mt-0">Total Deaths Today:</h6>
+                                <h2 class="recoveries text-danger"></h2>
+                                <span class="text-muted">New Deaths Today:</span>
+                                <span class="text-muted newDeaths"></span>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Recovered</h6>
-                                <h2 class="recoveries text-success" data-plugin="counterup">0</h2><span
-                                    class="text-muted">New Recovered: 0</span>
+                                <h6 class="text-muted text-uppercase mt-0">Total Recoveries Today:</h6>
+                                <h2 class="deaths text-success" data-plugin="counterup"></h2>
+                                <span class="text-muted">New Recoveries Today:</span>
+                                <span class="text-muted newRecov"></span>
                             </div>
                         </div>
                     </div>
                     <!-- symptoms tracker card -->
                     <div class="card-box shadow">
-                        <h4 class="header-title mb-3 " style="text-decoration: underline; text-align: center;">Symptom
+                        <h4 class="header-title mb-3 biggertxt" style="text-decoration: underline; text-align: center;">Symptom
                             Tracker</h4>
                         <div class="table-responsive">
                             <table class="table">
@@ -113,7 +117,7 @@
                                 </tbody>
                             </table>
                             <div class="row justify-content-center">
-                                <button type="submit" class="btn redbtn btn-outline-danger align-item-center"><a
+                                <button type="submit" class="btn align-item-center"><a
                                         href="symptoms.html">Submit Symptoms</a></button>
                             </div>
                         </div>
@@ -135,11 +139,17 @@
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response)
             var us = response.Countries[210];
 
-            $(".cases").html(us.TotalConfirmed);
-            $(".deaths").html(us.TotalDeaths);
-            $(".recoveries").html(us.TotalRecovered);
+
+        $(".cases").html(us.TotalConfirmed);
+        $(".newCases").html(us.NewConfirmed);
+        $(".deaths").html(us.TotalDeaths);
+        $(".newDeaths").html(us.NewDeaths);
+        $(".recoveries").html(us.TotalRecovered);
+        $(".newRecov").html(us.NewRecovered);
+
         });
 
     </script>
