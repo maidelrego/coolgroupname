@@ -9,13 +9,13 @@ $(document).ready(function () {
   // When the signup button is clicked, we validate the email and password are not blank
   symptomForm.on('submit', function (event) {
     event.preventDefault()
-    console.log('Fever?= ' + feverCheck.checked)
-    console.log('Cough?= ' + coughCheck.checked)
-    console.log('Shortness of breath?= ' + breathCheck.checked)
-    console.log('blue face?= ' + blueCheck.checked)
-    // Does a post to the signup route. If successful, we are redirected to the members page
-    // Otherwise we log any errors
-
+    if ($('input:checkbox').filter(':checked').length < 1) {
+      $('.required').text('*Must choose at least 1')
+      return false
+    }
+    $('.checkbox').click(function () {
+      $('.required').remove()
+    })
     $.post('/api/symptoms', {
       fever: feverCheck.checked,
       cough: coughCheck.checked,
@@ -25,14 +25,7 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data)
         window.location.replace('/members')
-        // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr)
-
-    function handleLoginErr (err) {
-      $('#alert .msg').text(err.responseJSON)
-      $('#alert').fadeIn(500)
-    }
   }
   )
 })
