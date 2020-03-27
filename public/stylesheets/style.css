@@ -296,7 +296,17 @@ body{
     color: gray
 }
 
+
 .table-responsive {
         overflow-x: hidden !important;
         
+
+#errorAlert{
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: #A70000;
+   
+    
+
 }
