@@ -14,7 +14,7 @@ module.exports = function (app) {
       fever: req.body.fever,
       cough: req.body.cough,
       breath: req.body.breath,
-      blueFace: req.body.blueFace
+      runnyNose: req.body.runnyNose
     }
     var where = {
 
@@ -23,8 +23,9 @@ module.exports = function (app) {
       }
     }
     db.User.update(data, where)
-      .then(function () {
-        res.redirect('/api/members')
+      .then(function (dat) {
+        console.log(`this thing: ${dat}`)
+        res.redirect('/api/user_data')
       })
       .catch(function (err) {
         console.error(JSON.stringify(err), data, where)
@@ -46,7 +47,8 @@ module.exports = function (app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
+      updatedAt: req.user.updatedAt
     })
   })
 
@@ -76,15 +78,12 @@ module.exports = function (app) {
 
   // Route for getting some data about our user to be used client side
   app.get('/api/user_data', isAuthenticated, function (req, res) {
-    res.json({
-      email: req.user.email,
-      firstName: req.user.firstName,
-      lastName: req.user.lastName,
-      fever: req.body.fever,
-      cough: req.body.cough,
-      breath: req.body.breath,
-      blueFace: req.body.blueFace,
-      id: req.user.id
+    db.User.findAll({
+      where: {
+        id: req.user.id
+      }
+    }).then(data => {
+      res.json(data)
     })
   })
 }

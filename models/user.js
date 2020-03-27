@@ -39,7 +39,7 @@ module.exports = function (sequelize, DataTypes) {
     breath: {
       type: DataTypes.STRING
     },
-    blueFace: {
+    runnyNose: {
       type: DataTypes.STRING
     }
   })
