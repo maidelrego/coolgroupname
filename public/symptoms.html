@@ -60,26 +60,11 @@
     </div>
 
 
-    
+
+
+    <script src='./js/symptomsForm.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    
-    <script>
 
-        $(document).ready(function () {
-            $("form").submit(function () {
-                if ($('input:checkbox').filter(':checked').length < 1) {
-                    $(".required").text("*Must choose at least 1")
-                    return false;
-                }
-                e.preventDefault();
-            });
-
-
-            $(".checkbox").click(function () {
-                $(".required").remove();
-            });
-        });
-    </script>
 
 </body>
 
