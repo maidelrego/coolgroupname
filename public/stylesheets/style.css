@@ -294,6 +294,11 @@ body{
     color: gray
 }
 
+
+.table-responsive {
+        overflow-x: hidden !important;
+        
+
 #errorAlert{
     display: none;
     text-align: center;
@@ -301,4 +306,5 @@ body{
     color: #A70000;
    
     
+
 }
