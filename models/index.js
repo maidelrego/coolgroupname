@@ -8,7 +8,7 @@ var config = require(path.join(__dirname, '/../config/config.json'))[env]
 var db = {}
 
 var sequelize = (config.use_env_variable)
-  ? new Sequelize(process.env[config.JAWSDB_URL], config)
+  ? new Sequelize(process.env[config.use_env_variable], config)
   : new Sequelize(config.database, config.username, config.password, config)
 
 fs
