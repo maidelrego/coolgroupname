@@ -293,3 +293,8 @@ body{
 .btnText:hover {
     color: gray
 }
+
+.table-responsive {
+        overflow-x: hidden !important;
+        
+}
