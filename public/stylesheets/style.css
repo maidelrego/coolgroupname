@@ -15,7 +15,9 @@ titles:
 /* ------------------------------------------------------ */
 
 /* Login & sign up forms style */
-
+.formBody {
+    background-color: white !important;
+}
 
 .buttons {
     margin-top: 5px;
