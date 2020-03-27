@@ -76,15 +76,12 @@ module.exports = function (app) {
 
   // Route for getting some data about our user to be used client side
   app.get('/api/user_data', isAuthenticated, function (req, res) {
-    res.json({
-      email: req.user.email,
-      firstName: req.user.firstName,
-      lastName: req.user.lastName,
-      fever: req.body.fever,
-      cough: req.body.cough,
-      breath: req.body.breath,
-      blueFace: req.body.blueFace,
-      id: req.user.id
+    db.User.findAll({
+      where: {
+        id: req.user.id
+      }
+    }).then(data => {
+      res.json(data[0])
     })
   })
 }
