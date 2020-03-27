@@ -25,25 +25,25 @@
 
             <div class="field input:focus">
                 <label class="checkbox is-xl">
-                    <input type="checkbox" class="checkbox-input">
+                    <input type="checkbox" class="checkbox-input" id="fever">
                     <span class="checkbox-label">Fever</span>
                 </label>
             </div>
             <div class="field">
                 <label class="checkbox is-xl">
-                    <input type="checkbox" class="checkbox-input">
+                    <input type="checkbox" class="checkbox-input" id="cough">
                     <span class="checkbox-label">Coughing</span>
                 </label>
             </div>
             <div class="field">
                 <label class="checkbox is-xl">
-                    <input type="checkbox" class="checkbox-input">
+                    <input type="checkbox" class="checkbox-input" id="breath">
                     <span class="checkbox-label">Shortness of Breath</span>
                 </label>
             </div>
             <div class="field">
                 <label class="checkbox is-xl">
-                    <input type="checkbox" class="checkbox-input">
+                    <input type="checkbox" class="checkbox-input" id="blueFace">
                     <span class="checkbox-label">Blue lips or face</span>
                 </label>
             </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="required"></div>
             <br>
-            <button class="button">Submit</button>
+            <button type="submit" class="button">Submit</button>
             <button class="button"><a href="dash-board.html">Close</a></button>
         </form>
     </div>
@@ -62,25 +62,8 @@
 
 
 
-
+    <script src='./js/symptomsForm.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>
-
-        $(document).ready(function () {
-            $("form").submit(function () {
-                if ($('input:checkbox').filter(':checked').length < 1) {
-                    $(".required").text("*Must choose at least 1")
-                    return false;
-                }
-                e.preventDefault();
-            });
-
-
-            $(".checkbox").click(function () {
-                $(".required").remove();
-            });
-        });
-    </script>
 
 </body>
 

@@ -293,3 +293,12 @@ body{
 .btnText:hover {
     color: gray
 }
+
+#errorAlert{
+    background-color: #A70000;
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    padding-bottom: 8px;
+}

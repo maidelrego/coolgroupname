@@ -17,7 +17,7 @@ $(document).ready(function () {
     if (data.cough === 'true') {
       var coughList = $('#list')
       var coughLi = $('<li>')
-      coughLi.text('Cough')
+      coughLi.text('Coughing')
       coughList.append(coughLi)
     }
 
