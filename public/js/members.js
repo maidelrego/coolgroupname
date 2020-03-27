@@ -35,4 +35,37 @@ $(document).ready(function () {
       blueList.append(blueLi)
     }
   })
+
+  function addCommas (nStr) {
+    nStr += ''
+    var x = nStr.split('.')
+    var x1 = x[0]
+    var x2 = x.length > 1 ? '.' + x[1] : ''
+    var rgx = /(\d+)(\d{3})/
+    while (rgx.test(x1)) {
+      x1 = x1.replace(rgx, '$1' + ',' + '$2')
+    }
+    return x1 + x2
+  }
+  var queryURL = 'https://covidtracking.com/api/us/daily'
+
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function (response) {
+    console.log(response)
+    var pos = addCommas(response[0].positive)
+    var posIncrease = addCommas(response[0].positiveIncrease)
+    var neg = addCommas(response[0].negative)
+    var negIncrease = addCommas(response[0].negativeIncrease)
+    var deaths = addCommas(response[0].death)
+    var hospital = addCommas(response[0].hospitalized)
+
+    $('.pos').html(pos)
+    $('.posIncrease').html('+ ' + posIncrease)
+    $('.neg').html(neg)
+    $('.negIncrease').html('+ ' + negIncrease)
+    $('.deaths').html(deaths)
+    $('.hospitalized').html(hospital)
+  })
 })

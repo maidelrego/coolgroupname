@@ -36,7 +36,6 @@ form, button {
     font-variant-caps: all-petite-caps;
 }
 
-
 .formContainer {
     width: 400px;
     margin-left: auto;
@@ -245,33 +244,28 @@ a {
     }
 }
 
-
-
-
-
 /* user dashboard styles */
-
 body{
     background-color: #f3f6f8;
     margin-top:20px;
-  }
+}
 
-  .card-box {
+.card-box {
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 30px;
     background-color: #ffffff;
-  }
-  
-  .text-muted {
-    color: darkgray !important;
-  }
-  
-  .font-13 {
-    font-size: 13px!important;
-  }
+}
 
-  .card-box {
+.text-muted {
+    color: darkgray !important;
+}
+
+.font-13 {
+    font-size: 13px!important;
+}
+
+.card-box {
     border-radius: 10px;
 }
 

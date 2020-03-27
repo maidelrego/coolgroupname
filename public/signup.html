@@ -9,10 +9,8 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="https://unpkg.com/neomorphism">
     <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- password bar css -->
     <link rel="stylesheet" href="./js/passStrength/password.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="./js/Validation/jqBootstrapValidation.js"></script>
-    <!-- or use local jquery -->
 </head>
 
 <body class="formBody">
@@ -46,6 +44,7 @@
                     <input id="password-input" type="password" placeholder="Enter password" class="input" minlength="6"
                         required>
                 </div>
+                <br>
                 <div class="field">
                     <button class="button" type="submit">Sign Up</button>
                     <button class="button"><a href="main.html">Cancel</a></button>
@@ -59,11 +58,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/passStrength/password.js"></script>
     <script type="text/javascript" src="./js/Validation/jqBootstrapValidation.js"></script>
-
+<!-- plugins -->
     <script>
-     $(document).ready(function () { 
-      
-      $(function () { $("input,select,textarea").jqBootstrapValidation(); });
+        $(function () { $('input,select,textarea').jqBootstrapValidation() })
 
         $('#password-input').password({
 
@@ -78,7 +75,7 @@
 
                 67: 'Medium: try using special characters',
 
-                94: 'Strong password',
+                94: 'Strong password'
 
             },
 
@@ -106,10 +103,8 @@
                 red: [0, 240],
                 green: [0, 240],
                 blue: 10
-            },
+            }
         });
-
-    });
     </script>
 </body>
 
