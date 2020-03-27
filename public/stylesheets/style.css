@@ -109,6 +109,7 @@ a {
     line-height: 1.5;
     color: #212529;
     text-align: left;
+    background-color: white !important;
 }
 .main-nav {
     position: absolute !important;
@@ -123,7 +124,8 @@ a {
 
 .main-nav .navbar-brand {
   padding: 0rem !important;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-weight:900; 
 }
 
 .main-nav .navbar-toggler {
@@ -191,7 +193,7 @@ a {
     margin-bottom: 12px;
     line-height: 1.2;
     color: #242429;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Oswald', sans-serif;
     letter-spacing: 3px;
 }
 
@@ -242,6 +244,22 @@ a {
         padding-top: 0;
         text-align: center;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(56,53,85,0.3), inset -2px -2px 4px rgba(255,255,255,0.5), inset 0 0 100px rgba(56,53,85,0.02);
+  box-shadow: inset 2px 2px 4px rgba(56,53,85,0.3), inset -2px -2px 4px rgba(255,255,255,0.5), inset 0 0 100px rgba(56,53,85,0.02);;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* user dashboard styles */
