@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body style="background-color: white !important;">
     <div class="formContainer">
         <h2 class="formTitle">Login</h2>
         <form autocomplete="off" class="login">
@@ -25,14 +25,21 @@
                 <label for="password-input" class="field-label">Password</label>
                 <input id="password-input" type="password" placeholder="Enter password" class="input">
             </div>
+
+            <div><p id="errorAlert">Invalid Email or Password!</p></div>
+
+            <br>
             <div class="field">
                 <button type="submit" class="button">login</button>
+                <button class="button"><a href="signup.html">Create An Account</a></button>
             </div>
         </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/login.js"></script>
+    
+
 </body>
 
 </html>

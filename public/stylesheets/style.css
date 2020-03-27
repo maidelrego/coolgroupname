@@ -122,7 +122,7 @@ a {
 
 .main-nav .navbar-brand {
   padding: 0rem !important;
-  font-family: "oswald";
+  font-family: "Oswald", sans-serif;
 }
 
 .main-nav .navbar-toggler {
@@ -249,7 +249,62 @@ a {
 
 /* user dashboard styles */
 
+body{
+    background-color: #f3f6f8;
+    margin-top:20px;
+  }
+
+  .card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+  }
+  
+  .text-muted {
+    color: darkgray !important;
+  }
+  
+  .font-13 {
+    font-size: 13px!important;
+  }
+
+  .card-box {
+    border-radius: 10px;
+}
 
 
+.biggertxt {
+    font-family: "Oswald", sans-serif;
+}
 
-/* FAQ styles */
+
+.helpfulBtn {
+    background-color: #A70000 !important;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.btnText {
+    color: white ;
+}
+
+.btnText:hover {
+    color: gray
+}
+
+
+.table-responsive {
+        overflow-x: hidden !important;
+        
+
+#errorAlert{
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    color: #A70000;
+   
+    
+
+}

@@ -15,10 +15,15 @@
 
 // get users current position
 getLocation()
-
-        function getLocation() {
+  
+        function getLocation(cordsSaved) {
+            if ( cordsSaved === true) {
+                localStorage.getItem (lat)
+                localStorage.getItem (long)
+            }
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(logPosition);
+
             } else {
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
@@ -27,8 +32,14 @@ getLocation()
         function logPosition(position) {
             var lat = position.coords.latitude 
             var long = position.coords.longitude
-            console.log(lat, long)
-        
+            var cordsSaved = true
+           localStorage.setItem("latitude", lat )
+           localStorage.setItem("longitude", long)
+           localStorage.setItem("cordsSaved", cordsSaved)
+           console.log(localStorage)
+
+
+
     fetch(
         `https://api.foursquare.com/v2/venues/explore?client_id=P3NLBCAU42TU4OS2SATALIQNS0X3BVOGWEJMQDD5FNMUJ0EU&client_secret=LQDM0HB2OFTGVHOY0SNDHD4BL2X2TEI5XZC5YT0TYLLJ0LTE&v=20180323&limit=5&ll=${lat},${long}&query=Emergency`)
   .then(res => res.json())
@@ -38,6 +49,28 @@ getLocation()
     // Code for handling errors
   })
 }
+
+
+
+         function fiveHospitals(data) {
+    var array_hospitals = (data.response.groups[0].items)
+    console.log(array_hospitals)
+    for (var i = 0; i < 5; i++)  {
+        var name = data.response.groups[0].items [i].venue.name
+        var address = data.response.groups[0].items [i].venue.location.address
+        $('.hospital').html('<li>' + name + '</li>')
+        $('.address').html('<li>' + address + '</li>')
+      
+       
+     }
+}
+;
+
+    // $('.address').text(hospitals.venue.location.address)
+    
+// // hospitals.forEach(function (item, index) {
+// //     console.log(item, index);
+// })};
 
 
 // var hospitalDiv = $("#hospitalDiv")
@@ -58,26 +91,6 @@ getLocation()
 //          var newDiv = $("<div>")
 //          newDiv.text(data.response.groups[0].items [i].venue.location.address)
 //          $("#addressDiv").append(newDiv [0])
-
-         function fiveHospitals(data) {
-    var array_hospitals = (data.response.groups[0].items)
-    console.log(array_hospitals)
-    for (var i = 0; i < 5; i++)  {
-        var name = data.response.groups[0].items [i].venue.name
-        var address = data.response.groups[0].items [i].venue.location.address
-        $('.hospital').html('<li>' + name + '</li>')
-        $('.address').html('<li>' + address + '</li>')
-      
-       
-        }
-}
-;
-
-    // $('.address').text(hospitals.venue.location.address)
-    
-// // hospitals.forEach(function (item, index) {
-// //     console.log(item, index);
-// })};
     </script>
 </head>
 
