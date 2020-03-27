@@ -77,31 +77,25 @@ form, button {
    color: #A70000;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .brand {
     color: #A70000;
-=======
-.checkbox-input {
-    background-color: #A70000 !important;
->>>>>>> 313fb6c00b1fbaef5b78a547dd42a37542acc185
 }
 
-<<<<<<< HEAD
-=======
+
 .checkbox-input {
     background-color: #A70000 !important;
 }
->>>>>>> master
 
-=======
->>>>>>> master
+
 .checkbox-input:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(167, 0, 0, 1);
 }
 
 
-
+a {
+    color: #A70000;
+}
 
 
 /* main page styles */
@@ -128,7 +122,7 @@ form, button {
 
 .main-nav .navbar-brand {
   padding: 0rem !important;
-  font-family: "oswald";
+  font-family: "Oswald", sans-serif;
 }
 
 .main-nav .navbar-toggler {
@@ -147,7 +141,6 @@ form, button {
 
 .navbar-light .navbar-nav .nav-link {
     color: black;
-    font-family: ;
 }
 
 .navbar-nav {
@@ -256,7 +249,47 @@ form, button {
 
 /* user dashboard styles */
 
+body{
+    background-color: #f3f6f8;
+    margin-top:20px;
+  }
+
+  .card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+  }
+  
+  .text-muted {
+    color: darkgray !important;
+  }
+  
+  .font-13 {
+    font-size: 13px!important;
+  }
+
+  .card-box {
+    border-radius: 10px;
+}
 
 
+.biggertxt {
+    font-family: "Oswald", sans-serif;
+}
 
-/* FAQ styles */
+
+.helpfulBtn {
+    background-color: #A70000 !important;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.btnText {
+    color: white ;
+}
+
+.btnText:hover {
+    color: gray
+}
