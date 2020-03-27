@@ -13,9 +13,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="./js/Validation/jqBootstrapValidation.js"></script>
     <!-- or use local jquery -->
+
+    <!--modal styling-->
+    <style>
+        .bg-modal {
+            height: 100%;
+            width: 100%;
+            background-color: rgba (0,0,0,0.7);
+            opacity: 0.7;
+            position: absolute;
+            top: 0;
+
+        }
+    </style>
 </head>
 
 <body>
+   
     <div class="formContainer">
         <h2 class="formTitle">Sign Up</h2>
         <form autocomplete="off" class="signup">
@@ -46,11 +60,21 @@
                     <input id="password-input" type="password" placeholder="Enter password" class="input" minlength="6"
                         required>
                 </div>
+                <div class="container">
+                    <p><a href="#ex1" rel="modal:open">
                 <div class="field">
-                    <button class="button" type="submit">Sign Up</button>
+                    <button class="button" type="submit">Sign Up</button></a></p>
                 </div>
         </form>
     </div>
+
+        <!-- modal pop up-->
+
+        <div class="bg-modal">
+            <div class="modal-content">
+
+            </div>
+        </div>
 
 
 

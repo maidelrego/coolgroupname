@@ -10,9 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-    <script>
-        getLocation()
-        var x = document.getElementById("demo");
+
+<script>
+
+// get users current position
+getLocation()
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -21,43 +23,62 @@
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
-
+// logs cooridantes and passes to fetch for api.
         function logPosition(position) {
-            var latitude = position.coords.latitude 
-            var longitude = position.coords.longitude
-            console.log(latitude, longitude)
-            var lat1 = latitude + 1
-            var lat2 = latitude - 1
-            var lon1 = longitude + 1
-            var lon2 = longitude - 1
-            console.log(lat1, lon1, lat2, lon2)
-        }
+            var lat = position.coords.latitude 
+            var long = position.coords.longitude
+            console.log(lat, long)
+        
+    fetch(
+        `https://api.foursquare.com/v2/venues/explore?client_id=P3NLBCAU42TU4OS2SATALIQNS0X3BVOGWEJMQDD5FNMUJ0EU&client_secret=LQDM0HB2OFTGVHOY0SNDHD4BL2X2TEI5XZC5YT0TYLLJ0LTE&v=20180323&limit=5&ll=${lat},${long}&query=Emergency`)
+  .then(res => res.json())
+  .then(data => fiveHospitals(data))
+  .catch(function( err) {
+      throw err
+    // Code for handling errors
+  })
+}
+
+
+// var hospitalDiv = $("#hospitalDiv")
+// var addressDiv = $("#addressDiv")
+// function fiveHospitals(data) {
+//     var array_hospitals = (data.response.groups[0].items)
+//     console.log(array_hospitals)
+    
+//     for (var i = 0; i < 5; i++)  {
+//          var newDiv = $("<div>")
+//         var hospitalname = (data.response.groups[0].items [i].venue.name)
+//         newDiv.text
+//          $("#hospitalDiv").append(newDiv [0].innerText)
+//          $("#addressDiv").append(newDiv [0])
+//          }
+
+//          for (var i = 0; i < 5; i++)  {
+//          var newDiv = $("<div>")
+//          newDiv.text(data.response.groups[0].items [i].venue.location.address)
+//          $("#addressDiv").append(newDiv [0])
+
+         function fiveHospitals(data) {
+    var array_hospitals = (data.response.groups[0].items)
+    console.log(array_hospitals)
+    for (var i = 0; i < 5; i++)  {
+        var name = data.response.groups[0].items [i].venue.name
+        var address = data.response.groups[0].items [i].venue.location.address
+        $('.hospital').html('<li>' + name + '</li>')
+        $('.address').html('<li>' + address + '</li>')
+      
        
-        
+        }
+}
+;
+
+    // $('.address').text(hospitals.venue.location.address)
+    
+// // hospitals.forEach(function (item, index) {
+// //     console.log(item, index);
+// })};
     </script>
-
-
-    <script type="text/javascript">
-        //PLACES API locates nearby hospitals
-        var queryURL = "https://api.geoapify.com/v1/places?lat1=39.260450635614475&lon1=-95.19375453409113&lat2=38.519782776227274&lon2=-94.35409646590942&type=hospital&limit=5&apiKey=2e11d39415844f0ca5d8464cf7d6a436"
-        
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                $('.hospital').text(response.features[0].properties.datasources[0].data.name)
-                console.log(response.features[0].properties.datasources[0].data['addr:housenumber'])
-                console.log(response.features[0].properties.datasources[0].data['addr:street'])
-                console.log(response.features[0].properties.datasources[0].data['addr:city'])
-                console.log(response.features[0].properties.datasources[0].data['addr:postcode'])
-                $('.phone').text(response.features[0].properties.datasources[0].data.phone)
-
-
-
-            });
-        // ---------------------------------------------------------
-    </script>
-
 </head>
 
 <body>
@@ -70,19 +91,17 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <!-- The scope attribute specifies that this is a header for a column -->
+                             
                                 <th scope="col">Hospital Name</th>
-                                <th scope="col">phone number</th>
                                 <th scope="col">address</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="hospital"></td>
-                                <td class="phone"></td>
-                                <td class="adress"></td>
+                                <td class="address"></td>
                             </tr>
-                            <!-- Insert additional movie rows here -->
+                            
                         </tbody>
                     </table>
                 </div>
