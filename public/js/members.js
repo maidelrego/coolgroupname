@@ -2,10 +2,17 @@ $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get('/api/user_data').then(function (data) {
-    console.log(data, 'members')
+    // eslint-disable-next-line no-undef
+    var date = moment.utc().format('YYYY-MM-DD HH:mm:ss')
+    // eslint-disable-next-line no-undef
+    var stillUtc = moment.utc(date).toDate(data.updatedAt)
+    // eslint-disable-next-line no-undef
+    var local = moment(stillUtc).local().format('MM-DD-YYYY')
+
     $('.member-name').text(data.firstName)
     $('.member-lastname').text(data.lastName)
     $('.member-email').text(data.email)
+    $('td#date').text(local)
 
     if (data.fever === 'true') {
       var feverList = $('#list')
