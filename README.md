@@ -59,7 +59,7 @@ Our site was created for a person who might have symptoms of Coronavirus. By usi
 | Presentation  | 10%    |
 
 ## View Our Site: 
-Heroku: 
+Heroku: https://floating-temple-73053.herokuapp.com/
 
 
 ## Contributors: 
