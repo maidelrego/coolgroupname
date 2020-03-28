@@ -11,8 +11,6 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
 </head>
 
 <body>
@@ -28,7 +26,7 @@
                             <div class="col-sm-6">
                                 <div class="text-right">
                                     <button type="button" class="btn btn-light waves-effect"><a class="nav-link"
-                                            href="/login.html">Log out</a></button>
+                                            href="main.html">Log out</a></button>
                                 </div>
                             </div>
                         </div>
@@ -68,32 +66,32 @@
 
                 <div class="col-xl-9">
                     <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
-                        <h3 class="biggertxt">Live Tracker - USA</h3>
+                        <h3 class="biggertxt">Daily Statisitcs - US</h3>
                     </div>
                     <!-- Live tracker box -->
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Cases Today:</h6>
-                                <h2 class="cases" data-plugin="counterup"></h2>
-                                <span class="text-muted">New Cases Today:</span>
-                                <span class="text-muted newCases"></span>
+                                <h6 class="text-muted text-uppercase mt-0">Positive Results:</h6>
+                                <h2 class="pos text-success"></h2>
+                                <span class="text-muted">Positive Results Increase:</span><br>
+                                <span class="text-muted posIncrease"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <h6 class="text-muted text-uppercase mt-0">Negative Results:</h6>
+                                <h2 class="neg text-danger"></h2>
+                                <span class="text-muted">Negative Results Increase:</span><br>
+                                <span class="text-muted negIncrease"></span>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="card-box">
                                 <h6 class="text-muted text-uppercase mt-0">Total Deaths Today:</h6>
-                                <h2 class="recoveries text-danger"></h2>
-                                <span class="text-muted">New Deaths Today:</span>
-                                <span class="text-muted newDeaths"></span>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Recoveries Today:</h6>
-                                <h2 class="deaths text-success" data-plugin="counterup"></h2>
-                                <span class="text-muted">New Recoveries Today:</span>
-                                <span class="text-muted newRecov"></span>
+                                <h2 class="deaths"></h2>
+                                <span class="text-muted">Hospitalized Today:</span><br>
+                                <span class="text-muted hospitalized"></span>
                             </div>
                         </div>
                     </div>
@@ -111,8 +109,10 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>01/01/2015</td>
-                                        <td>Fever, Cough</td>
+                                        <td id="date">01/01/2015</td>
+                                        <td id="list">
+                                           
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -129,30 +129,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
-    <script type="text/javascript">
-        //covid api
-        var queryURL = "https://api.covid19api.com/summary"
-
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response)
-            var us = response.Countries[210];
-
-
-        $(".cases").html(us.TotalConfirmed);
-        $(".newCases").html(us.NewConfirmed);
-        $(".deaths").html(us.TotalDeaths);
-        $(".newDeaths").html(us.NewDeaths);
-        $(".recoveries").html(us.TotalRecovered);
-        $(".newRecov").html(us.NewRecovered);
-
-        });
-
-    </script>
 </body>
 
 </html>

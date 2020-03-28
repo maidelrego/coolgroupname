@@ -83,7 +83,7 @@ module.exports = function (app) {
         id: req.user.id
       }
     }).then(data => {
-      res.json(data)
+      res.json(data[0])
     })
   })
 }
