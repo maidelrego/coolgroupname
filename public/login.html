@@ -5,15 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>User Login</title>
-
     <!-- CSS  -->
     <link rel="stylesheet" href="https://unpkg.com/neomorphism" />
     <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
-
 </head>
 
-<body style="background-color: white !important;">
+<body class="formBody">
     <div class="formContainer">
         <h2 class="formTitle">Login</h2>
         <form autocomplete="off" class="login">
@@ -25,9 +22,9 @@
                 <label for="password-input" class="field-label">Password</label>
                 <input id="password-input" type="password" placeholder="Enter password" class="input">
             </div>
-
-            <div><p id="errorAlert">Invalid Email or Password!</p></div>
-
+            <div>
+                <p id="errorAlert">Invalid Email or Password!</p>
+            </div>
             <br>
             <div class="field">
                 <button type="submit" class="button">login</button>
@@ -38,7 +35,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/login.js"></script>
-    
 
 </body>
 

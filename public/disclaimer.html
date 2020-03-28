@@ -1,35 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <title>Disclaimer</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/a8c1598f85.js" crossorigin="anonymous"></script>
+  <!-- style CSS -->
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
+<body class="mainBody">
+  <div class="main-content">
+    <header class="main-nav main-menu">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">COVID-19</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end main-menu-item" id="navbarText">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html"><i class="fas fa-user-plus" style="margin-right: 5px;"></i>
+                  Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i>
+                  Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="disclaimer.html"><i class="fas fa-info-circle" style="margin-right: 5px;"></i>
+                  Disclaimer</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+    </header>
+
+    <div class="card mx-auto" style="width: 50%; margin-top: 10em;">
+      <div class="card-body">
+        <h5 class="card-title biggertxt" style="text-decoration: underline;">Disclaimer</h5>
+        <p class="card-text">The contents of the COVID-19 Symptom Tracker, such as text, graphics, images, and other
+          materials created by COVID-19 Symptom Tracker and other materials contained on the COVID-19 Symptom Tracker
+          site (“Content”) are intended for educational and informational purposes only. The Content is not intended to
+          be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your
+          physician or other qualified health providers with any questions you may have regarding a medical condition or
+          symptoms. Never disregard professional medical advice or delay in seeking it because of something you have
+          read on COVID-19 Symptom Tracker site!
+          <br>
+          <br>
+          If you think you may have a medial emergency, call your doctor or 911 immediately. COVID-19 Symptom Tracker
+          does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other
+          information provided by COVID-19 Symptom Tracker, visitors to the site is solely at your own risk.
+          <br>
+          <br>
+          This application was created by students for educational purposes only.</p>
+        <a href="main.html" class="card-link">Exit</a>
       </div>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-
 </body>
 
 </html>
