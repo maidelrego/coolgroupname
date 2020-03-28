@@ -12,8 +12,6 @@ Our site was created for a person who might have symptoms of Coronavirus. By usi
 * Must utilize both GET and POST routes for retrieving and adding new data
 
 * Must utilize at least one new third-party API
-    * password validation:: http://reactiveraven.github.io/jqBootstrapValidation/
-
     * password strength bar: https://www.jqueryscript.net/form/Slim-Password-Strength-Meter-Plugin-For-jQuery.html
 
 * Must have a polished UI 
@@ -26,6 +24,9 @@ Our site was created for a person who might have symptoms of Coronavirus. By usi
     * Neomorphism UI: https://ismail9k.github.io/neomorphism/
 
 * Must follow MVC paradigm
+
+* Server side API's
+    * Covid-19 Statistics: https://covidtracking.com/api/
 
 
 

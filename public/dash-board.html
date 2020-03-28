@@ -3,14 +3,17 @@
 
 <head>
     <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>User Dashboard</title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -40,14 +43,12 @@
                         <h4 class="header-title biggertxt">Personal Information</h4>
                         <div class="panel-body">
                             <div class="text-left">
-                                <p class="text-muted font-13"><strong>First Name:</strong> <span
+                                <p class="text-muted font-13"><strong>First Name: </strong> <span
                                         class="member-name">John</span></p>
-                                <p class="text-muted font-13"><strong>Last Name:</strong><span
+                                <p class="text-muted font-13"><strong>Last Name: </strong><span
                                         class="member-lastname">Doe</span></p>
-                                <p class="text-muted font-13"><strong>Email:</strong> <span
+                                <p class="text-muted font-13"><strong>Email: </strong> <span
                                         class="member-email">john@gmail.com</span></p>
-                                <p class="text-muted font-13"><strong>Location:</strong> <span
-                                        class="member-location">USA</span></p>
                             </div>
                         </div>
                     </div>
@@ -55,9 +56,15 @@
                         <h4 class="header-title biggertxt" style="text-align: center;">Helpful Links</h4>
                         <div class="panel-body">
                             <div class="text-left">
-                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html"  target="_blank" class="btnText">Centers for Disease Control and Prevention</a></button>
-                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.who.int/health-topics/coronavirus#tab=tab_1"  target="_blank" class="btnText">World Health Organization</a></button>
-                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a href="https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf"  target="_blank" class="btnText">America’s Coronavirus Guidelines</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank"
+                                        class="btnText">Centers for Disease Control and Prevention</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.who.int/health-topics/coronavirus#tab=tab_1" target="_blank"
+                                        class="btnText">World Health Organization</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf"
+                                        target="_blank" class="btnText">America’s Coronavirus Guidelines</a></button>
                             </div>
                         </div>
                     </div>
@@ -66,9 +73,9 @@
 
                 <div class="col-xl-9">
                     <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
-                        <h3 class="biggertxt">Daily Statisitcs - US</h3>
+                        <h3 class="biggertxt">US Total Statisitcs</h3>
                     </div>
-                    <!-- Live tracker box -->
+                    <!-- Statistics -->
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="card-box">
@@ -88,16 +95,17 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="card-box">
-                                <h6 class="text-muted text-uppercase mt-0">Total Deaths Today:</h6>
+                                <h6 class="text-muted text-uppercase mt-0">Total Deaths:</h6>
                                 <h2 class="deaths"></h2>
-                                <span class="text-muted">Hospitalized Today:</span><br>
+                                <span class="text-muted">Hospitalized:</span><br>
                                 <span class="text-muted hospitalized"></span>
                             </div>
                         </div>
                     </div>
                     <!-- symptoms tracker card -->
                     <div class="card-box shadow">
-                        <h4 class="header-title mb-3 biggertxt" style="text-decoration: underline; text-align: center;">Symptom
+                        <h4 class="header-title mb-3 biggertxt" style="text-decoration: underline; text-align: center;">
+                            Symptom
                             Tracker</h4>
                         <div class="table-responsive">
                             <table class="table">
@@ -111,16 +119,39 @@
                                     <tr>
                                         <td id="date">01/01/2015</td>
                                         <td id="list">
-                                           
+
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="row justify-content-center">
-                                <button type="submit" class="btn align-item-center"><a
-                                        href="symptoms.html">Submit Symptoms</a></button>
+                                <button type="submit" class="btn align-item-center"><a href="symptoms.html">Submit Symptoms</a></button>
                             </div>
                         </div>
+                    </div>
+                    <!-- Hospital API -->
+                    <div class="container-fluid content-row errorOption">
+                        <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
+                            <h3 class="biggertxt">Hospitals Near You</h3>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card-box shadow h-100">
+                                <h5 class="hospital1"></h5>
+                                <h6 class="text-muted text-uppercase mt-0 address1"></h6>
+                                <h6 class="text-muted text-uppercase mt-0 city1"></h6>
+                                <span class="text-muted distance1"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card-box shadow h-100">
+                                <h5 class="hospital2"></h5>
+                                <h6 class="text-muted text-uppercase mt-0 address2"></h6>
+                                <h6 class="text-muted text-uppercase mt-0 city2"></h6>
+                                <span class="text-muted distance2"></span>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -132,5 +163,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
 </body>
-
 </html>
