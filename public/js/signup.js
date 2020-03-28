@@ -43,8 +43,8 @@ $(document).ready(function () {
       .catch(handleLoginErr)
   }
 
-  function handleLoginErr (err) {
-    $('#alert .msg').text(err.responseJSON)
-    $('#alert').fadeIn(500)
+  function handleLoginErr () {
+    $('#account').show()
+    $('#account').fadeOut(5500)
   }
 })
