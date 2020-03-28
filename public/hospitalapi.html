@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>User Dashboard</title>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2 class="biggertxt">User Dashboard</h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-light waves-effect"><a class="nav-link"
+                                            href="main.html">Log out</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Personal-Information -->
+            <div class="row justify-content-center">
+                <div class="col-xl-3">
+                    <div class="card-box">
+                        <h4 class="header-title biggertxt">Personal Information</h4>
+                        <div class="panel-body">
+                            <div class="text-left">
+                                <p class="text-muted font-13"><strong>First Name: </strong> <span
+                                        class="member-name">John</span></p>
+                                <p class="text-muted font-13"><strong>Last Name: </strong><span
+                                        class="member-lastname">Doe</span></p>
+                                <p class="text-muted font-13"><strong>Email: </strong> <span
+                                        class="member-email">john@gmail.com</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-box align-item-center">
+                        <h4 class="header-title biggertxt" style="text-align: center;">Helpful Links</h4>
+                        <div class="panel-body">
+                            <div class="text-left">
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank"
+                                        class="btnText">Centers for Disease Control and Prevention</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.who.int/health-topics/coronavirus#tab=tab_1" target="_blank"
+                                        class="btnText">World Health Organization</a></button>
+                                <button class="btn btn-lg btn-block helpfulBtn align-item-center"><a
+                                        href="https://www.whitehouse.gov/wp-content/uploads/2020/03/03.16.20_coronavirus-guidance_8.5x11_315PM.pdf"
+                                        target="_blank" class="btnText">America's Coronavirus Guidelines</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9">
+                    <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
+                        <h3 class="biggertxt">US Total Statisitcs</h3>
+                    </div>
+                    <!-- Statistics -->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <h6 class="text-muted text-uppercase mt-0">Positive Results:</h6>
+                                <h2 class="pos text-success"></h2>
+                                <span class="text-muted">Positive Results Increase:</span><br>
+                                <span class="text-muted posIncrease"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <h6 class="text-muted text-uppercase mt-0">Negative Results:</h6>
+                                <h2 class="neg text-danger"></h2>
+                                <span class="text-muted">Negative Results Increase:</span><br>
+                                <span class="text-muted negIncrease"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <h6 class="text-muted text-uppercase mt-0">Total Deaths:</h6>
+                                <h2 class="deaths"></h2>
+                                <span class="text-muted">Hospitalized:</span><br>
+                                <span class="text-muted hospitalized"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- symptoms tracker card -->
+                    <div class="card-box shadow">
+                        <h4 class="header-title mb-3 biggertxt" style="text-decoration: underline; text-align: center;">
+                            Symptom
+                            Tracker</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date Submitted</th>
+                                        <th>Symptoms</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01/01/2015</td>
+                                        <td id="list">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn align-item-center"><a href="symptoms.html">Submit Symptoms</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- hospital locator -->
+                    <div class="container-fluid content-row errorOption">
+                        <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom">
+                            <h3 class="biggertxt">Hospitals Near You</h3>
+                        </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card-box shadow h-100">
+                                <h5 class="hospital1"></h5>
+                                <h6 class="text-muted text-uppercase mt-0 address1"></h6>
+                                <h6 class="text-muted text-uppercase mt-0 city1"></h6>
+                                <span class="text-muted distance1"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card-box shadow h-100">
+                                <h5 class="hospital2"></h5>
+                                <h6 class="text-muted text-uppercase mt-0 address2"></h6>
+                                <h6 class="text-muted text-uppercase mt-0 city2"></h6>
+                                <span class="text-muted distance2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+<script>
+    // get users current position
+
+    var lat = localStorage.latitude;
+    var long = localStorage.longitude;
+
+  function getLocation () {
+      if (localStorage.positionSaved === true)  {
+      navigator.geolocation.getCurrentPosition(event) 
+          event.preventDefault()
+
+      }
+      else if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(logPosition)
+    } 
+    else {
+      $('.errorOption').hide()
+    }
+}
+  // logs cooridantes and passes to fetch for api.
+  function logPosition (position) {
+    localStorage.setItem("latitude", position.coords.latitude);
+   localStorage.setItem("longitude", position.coords.longitude);
+   localStorage.setItem("positionSaved", true);
+    var lat = localStorage.latitude;
+    var long = localStorage.longitude;
+    console.log(localStorage);
+
+    fetch(
+      `https://api.foursquare.com/v2/venues/explore?client_id=P3NLBCAU42TU4OS2SATALIQNS0X3BVOGWEJMQDD5FNMUJ0EU&client_secret=LQDM0HB2OFTGVHOY0SNDHD4BL2X2TEI5XZC5YT0TYLLJ0LTE&v=20180323&limit=5&ll=${lat},${long}&query=emergency`)
+      .then(res => res.json())
+      .then(data => fiveHospitals(data))
+      .catch(function (err) {
+        throw err
+        // Code for handling errors
+      })
+  }
+  function fiveHospitals (data) {
+    var arrayHospitals = (data.response.groups[0].items)
+    console.log(arrayHospitals)
+    var address = arrayHospitals[0].venue.location.formattedAddress[0]
+    var city = arrayHospitals[0].venue.location.formattedAddress[1]
+    var address2 = arrayHospitals[1].venue.location.formattedAddress[0]
+    var city2 = arrayHospitals[1].venue.location.formattedAddress[1]
+    var distance1 = arrayHospitals[0].venue.location.distance * 0.00062137
+    var distance2 = arrayHospitals[1].venue.location.distance * 0.00062137
+    $('.hospital1').append(arrayHospitals[0].venue.name)
+    $('.address1').html(address + ' ')
+    $('.city1').html(city + ' ')
+    $('.distance1').html(distance1.toFixed(2) + ' miles away')
+    $('.hospital2').append(arrayHospitals[1].venue.name)
+    $('.address2').html(address2 + ' ')
+    $('.city2').html(city2 + ' ')
+    $('.distance2').html(distance2.toFixed(2) + ' miles away')
+  }
+  getLocation()
+</script>
+</body>
+</html>
